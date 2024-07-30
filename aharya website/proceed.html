@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="proceed.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+    <header></header>
+   <div class="main-container">
+    <div class="wrapper">
+        <div class="container">
+            <form action="">
+                <h1>
+                    <i class="fas fa-shipping-fast"></i>
+                    Shipping Details
+                </h1>
+                <div class="name">
+                    <div>
+                        <label for="f-name">First</label>
+                        <input type="text" name="f-name">
+                    </div>
+                    <div>
+                        <label for="l-name">Last</label>
+                        <input type="text" name="l-name">
+                    </div>
+                </div>
+                <div class="street">
+                    <label for="name">Street</label>
+                    <input type="text" name="address">
+                </div>
+                <div class="address-info">
+                    <div>
+                        <label for="city">City</label>
+                        <input type="text" name="city">
+                    </div>
+                    <div>
+                        <label for="state">State</label>
+                        <input type="text" name="state">
+                    </div>
+                    <div>
+                        <label for="zip">Zip</label>
+                        <input type="text" name="zip">
+                    </div>
+                </div>
+                <h1>
+                    <i class="far fa-credit-card"></i> Payment Information
+                </h1>
+                <div class="cc-num">
+                    <label for="card-num">Credit Card No.</label>
+                    <input type="text" name="card-num">
+                </div>
+                <div class="cc-info">
+                    <div>
+                        <label for="card-num">Exp</label>
+                        <input type="text" name="expire">
+                    </div>
+                    <div>
+                        <label for="card-num">CCV</label>
+                        <input type="text" name="security">
+                    </div>
+                </div>
+                <div class="btns">
+                    <button id="Purchase">Purchase</button>
+                   
+                </div>
+            </form>
+        </div>
+    </div>
+   </div>
+
+   <script type="module">
+    import { headerdata, menudata, footer, bottomfooter, bottomLink } from './compontet1.js';
+    headerdata();
+    let totalprice=0;
+    const existingCartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    localStorage.setItem('cart', JSON.stringify(existingCartItems));
+    let cartTotal = JSON.parse(localStorage.getItem("cartTotal"));
+    const existingCartItemss = JSON.parse(localStorage.getItem('cart')) || [];
+    cartTotal = existingCartItemss.length;
+    let cart_Count=document.querySelector(".cart_count span");
+    cart_Count.innerHTML=cartTotal;
+
+    let btnCount=document.querySelector("#Purchase");
+    btnCount.addEventListener("click",()=>{
+        alert("Order Successfull🛍️");
+    })
+   
+
+
+    </script>
+</body>
+</html>

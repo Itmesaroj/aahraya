@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WishList Page</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="footer.css">
+	<style>
+*{
+margin: 0;
+
+padding: 0;
+
+box-sizing: border-box;
+
+}
+
+.container{
+
+max-width: 1200px;
+margin: 0 auto 2rem;
+
+}
+
+.container > h1{
+
+padding: 20px 0;
+
+}
+
+.cart{
+
+display: flex;
+
+}
+
+.products{
+
+flex: 0.75;
+
+}
+
+.product{
+
+display: flex;
+
+width: 100%;
+
+height: 200px;
+
+overflow: hidden;
+border: 1px solid silver;
+
+margin-bottom: 20px;
+
+}
+
+.product:hover{
+
+border: none;
+
+box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+
+transform: scale(1.01);
+
+}
+
+.product > img{
+
+width: 300px;
+
+height: 200px;
+
+object-fit: cover;
+
+}
+
+.product > img:hover{
+
+transform: scale(1.04);
+
+}
+
+.product-info{
+
+padding: 20px;
+
+width: 100%;
+position: relative;
+
+}
+.product-name{
+	font-size:.9rem;
+}
+.product-name, .product-price, .product-offer{
+
+margin-bottom: 20px;
+
+}
+
+.product-remove{
+
+position: absolute;
+
+bottom: 20px;
+
+right: 20px;
+
+padding: 10px 25px;
+
+background-color:  tomato;
+
+color: white;
+
+cursor: pointer;
+
+border-radius: 5px;
+
+}
+
+.product-remove:hover{
+
+background-color: white;
+
+color: green;
+
+font-weight: 600;
+
+border: 1px solid green;
+
+}
+
+.product-quantity > input{
+
+width: 40px;
+
+padding: 5px;
+
+text-align: center;
+
+}
+
+.fa{
+
+margin-right: 5px;
+
+}
+.product-offer{
+	color: green;
+
+}
+.cart-total{
+
+flex: 0.25;
+
+margin-left: 20px;
+
+padding: 20px;
+
+height: 240px;
+
+border: 1px solid silver;
+
+border-radius: 5px;
+
+}
+
+.cart-total p{
+
+display: flex;
+
+justify-content: space-between;
+
+margin-bottom: 30px;
+
+font-size: 20px;
+
+}
+
+.cart-total a{
+display: block;
+text-align: center;
+height: 40px;
+line-height: 40px;
+background-color:hsl(353, 100%, 78%);
+border-radius: 5px;
+color: white;
+text-decoration: none;
+
+}
+.cart-total a:hover{
+background-color:hsl(353, 96%, 73%);
+
+}
+.title{
+	margin-bottom: 1rem;
+}
+
+
+@media screen and (max-width: 700px){
+.title{
+	font-size: 1.2rem;
+	color: rgb(77, 77, 77);
+}
+.remove{
+display: none;
+}
+
+.product-name{
+	font-weight: 800;
+	color: rgb(77, 77, 77);
+}
+.product-price, .product-offer{
+color: rgb(77, 77, 77);
+font-weight: 400;
+margin-bottom: 20px;
+}
+
+.product-offer{
+	color: rgb(30, 210, 33);
+}
+
+.product-remove {
+	padding: 8px;
+}
+.container .cart-total p{
+	font-size: .9rem;
+}
+.product{
+	height: 200px;
+}
+
+.product > img{
+	height: 150px;
+	width: 200px;
+
+}
+
+.product-name, .product-price, .product-offer{
+	margin-bottom: 10px;
+}
+.cart{
+	font-size: .9rem;
+}
+}
+
+@media screen and (max-width: 900px){
+.cart{
+	flex-direction: column;
+}
+.cart-total{
+	margin-left: 0;
+	margin-bottom: 20px;
+
+}
+}
+@media screen and (max-width: 1220px){
+.container{
+	max-width: 95%;
+}
+
+}
+	</style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header></header>
+    <div class="bottom_bar"></div>
+   
+	<div class="container">
+		<h2 class="title">Shopping Cart🛍️</h2>
+		<div class="cart">
+			<div class="products">
+	
+			</div>
+			<div class="cart-total">
+				<p>
+					<span>Total Price💴</span>
+					<span class="Total-price">₹ 3,000</span>
+				</p>
+				<p>
+					<span>Number of Items</span>
+					<span class="Number-of-item">2</span>
+				</p>
+				<p>
+					<span>You Save</span>
+					<span>₹ 1,000</span>
+				</p>
+				<a href="proceed.html" class="Proceed_btn">Proceed to Checkout</a>
+			</div>
+	
+		</div>
+	
+	</div>
+    <div id="footer-section"></div>
+
+<!-- bottom -->
+<div class="bottom-footer"></div>
+</body>
+</html>
+<script type="module" src="cart.js">
+</script>

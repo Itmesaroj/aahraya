@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"rel="stylesheet">
+    <style>
+      *{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.bottom_header_section{
+  -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+-moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+
+a{
+  text-decoration: none;
+}
+.main-section{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.box{
+  width: 30%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  font-size: .8rem;
+  border-radius: 7px;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.top-image img{
+  width: 100%;
+  height: 200px;
+}
+.data-get-sec{
+  width:100%;
+  gap: 3rem;
+  padding: 2rem;
+}
+.data-get-sec h3{
+  margin: .5rem;
+  font-size:1.5rem;
+  font-weight: 600;
+  color: rgb(31, 31, 31);
+}
+.data-get-sec p{
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.design-span span{
+  color: #ff8f9c;
+  padding: 2px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.design-span{
+  margin-bottom: 1rem;
+}
+ button{
+  width: 100%;
+  height: 2.5rem;
+  background-color:#e96070;
+  border: transparent;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+button:hover{
+  background-color: black;
+}
+.help-sec{
+  display: flex;
+ justify-content: space-between;
+ font-size: .7rem;
+  padding: 2rem;
+padding-bottom:0px;
+}
+.help-sec p {
+  
+  font-weight: 400;
+ font-size: .7rem;
+}
+.help-sec p a{
+  color: red;
+  font-weight: 700;
+ 
+}
+@media (max-width:1200px) {
+  .box{
+      width: 40%;
+      
+  }
+}
+@media (max-width:930px) {
+  .box{
+      width: 50%;
+      
+  }
+}
+@media (max-width:700px) {
+  .box{
+      width: 60%;
+      
+  }
+}
+@media (max-width:500px) {
+  .box{
+      width: 80%;
+      
+  }
+}
+@media (max-width:350px) {
+  .box{
+      width: 90%;
+      
+  }
+}
+  </style>
+</head>
+<body>
+     <!-- Header Section -->
+    <header></header>
+    <div class="bottom_bar"></div>
+     <!-- form sign up -->
+     <div class="main-section">
+      <div class="box">
+        <div class="top-image">
+            <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2023/1/25/f5e9a029-33c3-4a92-811b-ef7917fe6d441674670210687-offer-banner-300-600x240-code-_-MYNTRA300.jpg" alt="">
+        </div>
+        <div class="data-get-sec">
+            
+        </div>
+      </div>
+    </div>
+</body>
+</html>
+
+<script type="module">
+import { headerdata ,bottomLink} from './compontet1.js';
+
+headerdata();
+bottomLink();
+const existingCartItems = JSON.parse(localStorage.getItem('cart')) || [];
+localStorage.setItem('cart', JSON.stringify(existingCartItems));
+let cartTotal = JSON.parse(localStorage.getItem("cartTotal"));
+const existingCartItemss = JSON.parse(localStorage.getItem('cart')) || [];
+cartTotal = existingCartItemss.length;
+let cart_Count=document.querySelector(".cart_count span");
+cart_Count.innerHTML=cartTotal;
+let userdata = JSON.parse(localStorage.getItem("userData")) || {};
+console.log(userdata)
+if(userdata!={}){
+  let dataGet=document.querySelector(".data-get-sec").innerHTML=`
+ <h3>Hi, Mr/Mrs :</h3>
+ <p>Name: ${userdata.username}</p>
+ <p>Email: ${userdata.email}</p>
+  <p>Phone: ${userdata.phone}</p>
+  <p>password: ************</p>
+
+  <button id="log-out">Log Out</button>
+
+   <div class="help-sec">
+                <p>Have trouble logging in?</p>
+                <p><a href="">Get Help</a></p>
+            </div>
+  `
+}
+document.querySelector("#log-out").addEventListener("click",()=>{
+  localStorage.removeItem("userData");
+  localStorage.removeItem("isAuth");
+  window.location.href="home.html";
+})
+</script>

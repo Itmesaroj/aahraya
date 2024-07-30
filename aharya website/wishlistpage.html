@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WishList Page</title>
+    
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="footer.css">
+
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wishList-item-total {
+            width: 290px;
+            border: 2px solid rgb(246, 140, 176);
+            border-radius: 25px;
+            padding: .5rem;
+            color: white;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 2px;
+            background-color: hsl(353, 100%, 78%);
+            margin: 2rem;
+        }
+        .wishList-item-total span {
+            color: white;
+        }
+        .product-wishlist {
+           display: grid;
+           grid-template-columns: repeat(4,1fr);
+           gap: 2rem;
+           margin-bottom: 2rem;
+           padding: 2rem;
+        }
+        .item {
+           display:flex;
+           flex-direction: column;
+           padding: 2rem;
+           border-radius: 5px;
+           box-shadow: 0 0 10px rgba(225, 222, 222, 0.3);
+            
+        }
+        .item:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            
+        }
+        .item img {
+            width:100%;
+            height: 300px;
+            border-radius: 5px;
+        }
+        .title-item {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 10px;
+            color: rgb(85, 83, 83);
+        }
+        .price {
+            font-size: 16px;
+            margin-top: 5px;
+            color: #5bc731;
+        }
+        .remove-btn {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .remove-btn:hover {
+            background-color: #c0392b;
+        }
+        .add-to-cart {
+            background-color: hsl(353, 100%, 78%);
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+        .add-to-cart:hover {
+            background-color: hsl(353, 72%, 68%);
+        }
+        @media (max-width:1250px){
+            .product-wishlist {
+           display: grid;
+           grid-template-columns: repeat(3,1fr);
+           gap: 2rem;
+           margin-bottom: 1.5rem;
+           padding: 2rem;
+        }
+    }
+        @media (max-width:900px){
+            .product-wishlist {
+           display: grid;
+           grid-template-columns: repeat(2,1fr);
+           gap: 2rem;
+           margin-bottom: 1.5rem;
+           padding: 2rem;
+        }
+        }
+        @media (max-width:600px){
+            .product-wishlist {
+           display: grid;
+           grid-template-columns: repeat(2,1fr);
+           gap: 2rem;
+           margin-bottom: 1.5rem;
+           padding: 2rem;
+        }
+        .item {
+           display:flex;
+           flex-direction: column;
+           padding: .3rem;
+           border-radius: 5px;
+           box-shadow: 0 0 10px rgba(225, 222, 222, 0.3);
+            
+        }
+        }
+        @media (max-width:450px){
+            .product-wishlist {
+           display: grid;
+           grid-template-columns: repeat(1,1fr);
+           gap: 2rem;
+           margin-bottom: 1.5rem;
+           padding: 2rem;
+        }
+        .item {
+           display:flex;
+           flex-direction: column;
+           padding: 2rem;
+           border-radius: 5px;
+           box-shadow: 0 0 10px rgba(225, 222, 222, 0.3);
+            
+        }
+        }
+</style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header></header>
+    <div class="bottom_bar"></div>
+    <div class="wishList-item-total">
+        <p>My WishList <span>0</span> Items ❤️🛍️</p>
+    </div>
+
+    <div class="product-wishlist"></div>
+
+    <div id="footer-section"></div>
+
+<!-- bottom -->
+<div class="bottom-footer"></div>
+</body>
+</html>
+<script type="module" src="wishlistjs.js">
+</script>
